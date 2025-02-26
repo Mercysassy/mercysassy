@@ -26,7 +26,7 @@
 <div class="page-wrapper">
  	
     <!-- Preloader -->
-    <div class="preloader"></div>
+    <!-- <div class="preloader"></div> -->
  	
     <!-- Main Header-->
     <header class="main-header header-style-two">
@@ -102,32 +102,9 @@
 								<ul class="navigation clearfix">
 								<li><a href="{{ url('/') }}">Home</a></li>
 								<li><a href="{{ url('about') }}">About us</a></li>
-
-										
-									<li class="dropdown"><a href="#">Services</a>
-										<ul>
-											<li><a href="services.html">Services</a></li>
-											<li><a href="services-2.html">Services Two</a></li>
-											<li><a href="services-single.html">Services Single</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="#">Portfolio</a>
-										<ul>
-											<li><a href="portfolio-2-column.html">Portfolio Two Column</a></li>
-											<li><a href="portfolio-3-column.html">Portfolio Three Column</a></li>
-											<li><a href="portfolio-4-column.html">Portfolio Four Column</a></li>
-											<li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
-											<li><a href="portfolio-single.html">Portfolio Single</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="#">Blog</a>
-										<ul>
-											<li><a href="blog.html">Our Blog</a></li>
-											<li><a href="blog-list.html">Blog List</a></li>
-											<li><a href="blog-single.html">Blog Single</a></li>
-										</ul>
-									</li>
-									<li><a href="contact.html">Contact us</a></li>
+								<li><a href="{{ url('services') }}">Services</a></li>
+								<li><a href="{{ url('blog') }}">blog</a></li>
+								<li><a href="{{ url('contact') }}">Contact us</a></li>
 								</ul>
 							</div>
 							
@@ -202,38 +179,8 @@
 
 							<!-- <li><a href="{{url('/')}}">Home</a></li> -->
 
-								<li class="dropdown"><a href="#">About Us</a>
-									<ul>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="team.html">Our Team</a></li>
-										<li><a href="case-studies.html">Case Studies</a></li>
-										<li><a href="testimonial.html">Testimonial</a></li>
-										<li><a href="not-found.html">Error Page</a></li>
-									</ul>
-								</li>
-								<li class="dropdown"><a href="#">Services</a>
-									<ul>
-										<li><a href="services.html">Services</a></li>
-										<li><a href="services-2.html">Services Two</a></li>
-										<li><a href="services-single.html">Services Single</a></li>
-									</ul>
-								</li>
-								<li class="dropdown"><a href="#">Portfolio</a>
-									<ul>
-										<li><a href="portfolio-2-column.html">Portfolio Two Column</a></li>
-										<li><a href="portfolio-3-column.html">Portfolio Three Column</a></li>
-										<li><a href="portfolio-4-column.html">Portfolio Four Column</a></li>
-										<li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
-										<li><a href="portfolio-single.html">Portfolio Single</a></li>
-									</ul>
-								</li>
-								<li class="dropdown"><a href="#">Blog</a>
-									<ul>
-										<li><a href="blog.html">Our Blog</a></li>
-										<li><a href="blog-list.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-									</ul>
-								</li>
+					
+								
 								<li><a href="contact.html">Contact us</a></li>
                             </ul>
                         </div>

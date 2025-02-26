@@ -84,7 +84,7 @@
 						<!--Video Box-->
                         <div class="video-box">
                             <figure class="image">
-                                <img src="images/resource/video-img.jpg" alt="">
+                                <img src="{{asset('front/images/resource/video-img.jpg')}}" alt="">
                             </figure>
                             <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-play-button"></span></a>
                         </div>
@@ -127,7 +127,7 @@
 				<div class="services-block-four col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="images/resource/service-3.jpg" alt="">
+							<img src="{{ asset('front/images/resource/service-3.jpg')}}" alt="">
 							<div class="overlay-box">
 								<div class="content">
 									<div class="icon-box">
@@ -355,9 +355,9 @@
 								<h2>Our winning <span>many awards</span> in business sectors</h2>
 								<div class="text">The argument in favor of using filler text goes something like this: If you use real content in the design process, anytime you reach a review point you’ll end up reviewing and negotiating.</div>
 								<ul class="clearfix">
-									<li><img src="images/clients/7.jpg" alt="" title=""></li>
-									<li><img src="images/clients/8.jpg" alt="" title=""></li>
-									<li><img src="images/clients/9.jpg" alt="" title=""></li>
+									<li><img src="{{ asset('front/images/clients/7.jpg')}}" alt="" title=""></li>
+									<li><img src="{{ asset('front/images/clients/8.jpg')}}" alt="" title=""></li>
+									<li><img src="{{ asset('front/images/clients/9.jpg')}}" alt="" title=""></li>
 								</ul>
 							</div>
 						</div>
@@ -427,7 +427,7 @@
 							<!--Image Column -->
 							<div class="column col-lg-6 col-md-6 col-sm-12">
 								<div class="image">
-									<img src="images/resource/counter-img.jpg" alt="" title="">
+									<img src="{{ asset('front/images/resource/counter-img.jpg')}}" alt="" title="">
 								</div>
 							</div>
 							
@@ -475,7 +475,7 @@
 				</div>
 				
 			</div>
-			<div class="side-image" style="background-image:url(images/resource/image-3.jpg)"></div>
+			<div class="side-image" style="background-image:url({{('front/images/resource/image-3.jpg')}})"></div>
 		</div>
 	</section>
 	<!-- End Faq Section -->
@@ -495,7 +495,7 @@
 				<div class="news-block-two col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="images/resource/news-4.jpg" alt="" />
+							<img src="{{ asset('front/images/resource/news-4.jpg')}}" alt="" />
 							<div class="overlay-box">
 								<a href="images/resource/news-4.jpg" data-fancybox="news" data-caption="" class="plus flaticon-plus-symbol"></a>
 							</div>
@@ -515,7 +515,7 @@
 				<div class="news-block-two col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="images/resource/news-5.jpg" alt="" />
+							<img src="{{ asset('front/images/resource/news-5.jpg')}}" alt="" />
 							<div class="overlay-box">
 								<a href="images/resource/news-5.jpg" data-fancybox="news" data-caption="" class="plus flaticon-plus-symbol"></a>
 							</div>
@@ -535,9 +535,9 @@
 				<div class="news-block-two col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
 						<div class="image">
-							<img src="images/resource/news-6.jpg" alt="" />
+							<img src="{{ asset('front/images/resource/news-6.jpg')}}" alt="" />
 							<div class="overlay-box">
-								<a href="images/resource/news-6.jpg" data-fancybox="news" data-caption="" class="plus flaticon-plus-symbol"></a>
+								<a href="{{ asset('front/images/resource/news-6.jpg')}}" data-fancybox="news" data-caption="" class="plus flaticon-plus-symbol"></a>
 							</div>
 						</div>
 						<div class="lower-content">
@@ -563,18 +563,18 @@
 			<div class="carousel-outer">
                 <!--Sponsors Slider-->
                 <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/6.png" alt=""></a></div></li>
-					<li><div class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></div></li>
-                    <li><div class="image-box"><a href="#"><img src="images/clients/6.png" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/1.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/2.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/3.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/4.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/5.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/6.png')}}" alt=""></a></div></li>
+					<li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/1.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/2.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/3.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/4.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/5.png')}}" alt=""></a></div></li>
+                    <li><div class="image-box"><a href="#"><img src="{{ asset('front/images/clients/6.png')}}" alt=""></a></div></li>
                 </ul>
             </div>
 			
