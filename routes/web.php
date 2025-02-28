@@ -20,6 +20,7 @@ Route::get('contact', function () {
 });
 
 Route::post('createregister', [UserController::class, 'createregister'])->name('createregister');
+Route::post('checklogin', [UserController::class, 'checklogin'])->name('checklogin');
 Auth::routes();
 Route::middleware(['auth:admin'])->group(function(){
     // Route::view('/register', 'dashboard.admin.register')->name('register');

@@ -12,9 +12,9 @@ class UserController extends Controller
     public function createregister(Request $request){
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            // 'email' => 'required',
             'password' => 'required',
-            // 'email' => ['required', 'unique:users'],
+            'email' => ['required', 'string','email','max:255','unique:users'],
             // 'password' => ['required|confirmed|min:6'],
 
         ]);
@@ -24,7 +24,30 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => \Hash::make($request->password),
         ]);
-        dd($request->all());
+       if ($adduser) {
+        return redirect()->route('login')->with('success','you have registered successfully');
+       
+       }else{
+        return back()->with('fail','you have registered successfully');
+       }
 
+    }
+    public function checklogin(Request $request){
+        $request->validate([
+            // 'email' => 'required',
+            'password' => 'required',
+            'email' => ['required'],
+            // 'password' => ['required|confirmed|min:6'],
+        ],[
+            'email.required' => 'email is required',
+            'password.required' => 'password is required',
+        ]);
+        $creds = $request->only('email','password');
+        if (auth()->attempt($creds)){
+            return redirect()->route('home');
+            
+        }else{
+            return back()->with('fail','incorrect credentials');
+        }
     }
 }
