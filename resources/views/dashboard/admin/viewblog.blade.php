@@ -48,18 +48,29 @@
                   </tr>
                   </thead>
                   <tbody>
+
+                  @if (session('success'))
+                <div class="alert alert-success">
+                {{ session('success') }}
+              </div> 
+            @endif
+
+              @if (session('fail'))
+                <div class="alert alert-danger">
+                {{ session('fail') }}
+              </div>
+            @endif
                     @foreach($viewblogs as $viewblog)
                   <tr>
                     <td>{{$viewblog->title}}</td>
                     <td>{!!$viewblog->body !!}</td>
                     <td>{{$viewblog->category}}</td>
                     <td>{{$viewblog->author}}</td>                    
-
-                    <td>{!!$viewblog->images !!}</td>
+                    <td><img style="width: auto; height: 80px;" src="{{ URL::asset("/public/../$viewblog->images")}}" alt=""></td>
                     <td>{{$viewblog->status}}</td>
                     <td><a href="{{ url('/viewsingleblog/'.$viewblog->slug) }}" target="_blank" class="btn btn-info"><i class="fas fa-eye"></i> View</a></td>
                     <td><a href="{{ url('/editsingleblog/'.$viewblog->slug) }}" target="_blank" class="btn btn-primary"><i class="fas fa-edit"></i> edit</a></td>
-                    <td><a href="{{ url('/deletesingleblog/'.$viewblog->slug) }}" target="_blank" class="btn btn-danger"><i class="fas fa-trash"></i> delete</a></td>
+                    <td><a href="{{ url('/deletesingleblog/'.$viewblog->id) }}"  class="btn btn-danger"><i class="fas fa-trash"></i> delete</a></td>
                     <td>{{$viewblog->created_at->format('D/M/Y')}}</a></td>
                   </tr>
                   @endforeach

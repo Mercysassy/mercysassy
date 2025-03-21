@@ -59,4 +59,49 @@ public function createblog(Request $request)
         $viewsingle_blog = Blog::where('slug', $slug)->first();
         return view('dashboard.admin.viewsingleblog',compact('viewsingle_blog'));
     }
+    public function editsingleblog($slug){
+        $editblog = Blog::where('slug', $slug)->first();
+        return view('dashboard.admin.editsingleblog',compact('editblog'));
+    }
+    public function updateblog(Request $request, $slug){
+        $editblog = Blog::where('slug', $slug)->first();
+        $request->validate([
+            'title'=> ['required','string'],
+            'author'=> ['required','string'],
+            'body'=> ['required','string'],
+            'category'=> ['required','string'],
+            'images' => 'nullable|mimes:jpg,png,jpeg'
+    
+            // 'images'=> ['required,'string'],
+        ]);
+    
+        if  ($request->hasfile('images')){
+            $file = $request['images'];
+            $filename = 'mercysassy-' . time() . '.' . $file->getClientOriginalExtension();
+            $path = $request->file('images')->storeAs('productimages',$filename);
+        }else{
+            $path = 'noimage.jpg';
+        }
+    
+        $editblog->update([
+            'images' => $path,
+            'title' => $request->title,
+            'author' => $request->author,
+            'body' => $request->body,
+            'category' => $request->category,
+        ]);
+    
+        if ($editblog){
+            return back()->with('success','you have updated blog successfully');
+        }else{
+            return back()->with('fail','you have not added successfully');
+        }
+    }
+    
+    
+    public function deletesingleblog($id){
+        $deleteblog = Blog::where('id', $id)->delete();
+        return back()->with('success','you have deleted blog successfully');
+
+    }
 }

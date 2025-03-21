@@ -20,8 +20,6 @@ Route::get('blog', function () {
 Route::get('contact', function () {
     return view('pages.contact');
 });
-
-
 Route::post('createregister', [UserController::class, 'createregister'])->name('createregister');
 Route::post('checklogin', [UserController::class, 'checklogin'])->name('checklogin');
 Auth::routes();
@@ -30,10 +28,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/addblog',[BlogController::class, 'addblog'])->name(('addblog'));
 Route::get('/viewblog',[BlogController::class, 'viewblog'])->name(('viewblog'));
 Route::get('/viewsingleblog/{slug}',[BlogController::class, 'viewsingleblog'])->name(('viewsingleblog'));
+Route::get('/editsingleblog/{slug}',[BlogController::class, 'editsingleblog'])->name(('editsingleblog'));
+Route::put('/updateblog/{slug}',[BlogController::class, 'updateblog'])->name(('updateblog'));
+Route::get('/deletesingleblog/{id}',[BlogController::class, 'deletesingleblog'])->name(('deletesingleblog'));
 Route::post('createblog',[BlogController::class,'createblog'])->name('createblog');
     // Route::view('/register', 'dashboard.admin.register')->name('register');
     // Route::get('/home', [AdminController::class, 'home'])->name('home');
-
 });
 
 

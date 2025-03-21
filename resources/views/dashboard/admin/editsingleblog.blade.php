@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>View Single Blog</h1>
+            <h1>Edit Single Blog</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -36,9 +36,9 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{url('createblog')}}" method="POST" enctype="multipart/form-data">
+              <form action="{{url('updateblog/'.$editblog->slug)}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                
+                @method('put')
                 @if (session('success'))
                 <div class="alert alert-success">
                 {{ session('success') }}
@@ -54,7 +54,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
-                    <input type="title" value="{{$viewsingle_blog->title}}" name="title" @error('title') is-invalid @enderror class="form-control" id="exampleInputEmail1" placeholder="Enter title">
+                    <input type="title" value="{{$editblog->title}}" name="title" @error('title') is-invalid @enderror class="form-control" id="exampleInputEmail1" placeholder="Enter title">
 
                   </div>
                   @error('title')
@@ -65,7 +65,7 @@
                  
                   <div class="form-group">
                     <label for="exampleInputEmail1">Author Name</label>
-                    <input type="text" value="{{$viewsingle_blog->author}}" name="author" @error('author') is-invalid @enderror class="form-control" id="exampleInputEmail1" placeholder="Enter author">
+                    <input type="text" value="{{$editblog->author}}" name="author" @error('author') is-invalid @enderror class="form-control" id="exampleInputEmail1" placeholder="Enter author">
                   </div>
                   @error('Author')
                   <span class="text-danger">{{$message}}</span>
@@ -73,13 +73,13 @@
 
                   <div class="form-group">
                 <textarea class="textarea" name="body" placeholder="Place some text here"
-                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$viewsingle_blog->body}}</textarea>
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$editblog->body}}</textarea>
               </div>
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">category</label>
                     <select name="category" class="form-control">
-                        <option value="{{$viewsingle_blog->category}}">{{$viewsingle_blog->category}}</option>
+                        <option value="{{$editblog->category}}">{{$editblog->category}}</option>
                       <option value="Technology">Technology</option>
                       <option value="education">Education</option>
                       <option value="health">Health</option>
@@ -91,7 +91,7 @@
                   <span class="text-danger">{{$message}}</span>
                   @enderror
 
-                  <td><img style="width: auto; height: 80px;" src="{{ URL::asset("/public/../$viewsingle_blog->images")}}" alt=""></td>
+                  <td><img style="width: auto; height: 80px;" src="{{ URL::asset("/public/../$editblog->images")}}" alt=""></td>
                   <div class="form-group">
                     <label for="exampleInputFile">Image</label>
                     <div class="input-group">
@@ -112,11 +112,9 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <a href="{{ url('viewblog')}}" class="btn btn-primary">Back</a>
-                  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
-              
             </div>
             <!-- /.card -->
 
